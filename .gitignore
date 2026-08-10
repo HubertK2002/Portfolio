@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Edytory / IDE
+.vscode/
+.idea/
+*.swp
+
+# Logi
+*.log
+
+# Zależności (gdyby doszły)
+node_modules/
+vendor/

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pl" data-lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hubert Kwiecień — PHP / Backend Developer</title>
+<meta name="description" content="Portfolio Huberta Kwiecienia — PHP / Backend Developer. Symfony, Laravel, REST API, bazy danych.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="inner">
+    <a href="#top" class="brand">Hubert<span>.</span>Kwiecień</a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="links">
+      <a href="#about"><span class="pl">O mnie</span><span class="en">About</span></a>
+      <a href="#skills"><span class="pl">Umiejętności</span><span class="en">Skills</span></a>
+      <a href="#projects"><span class="pl">Projekty</span><span class="en">Projects</span></a>
+      <a href="#experience"><span class="pl">Doświadczenie</span><span class="en">Experience</span></a>
+      <a href="instrukcje/index.php"><span class="pl">Baza wiedzy</span><span class="en">Knowledge base</span></a>
+      <a href="#contact"><span class="pl">Kontakt</span><span class="en">Contact</span></a>
+      <button class="btn-lang">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="container inner">
+    <div>
+      <div class="role">PHP · Backend Developer</div>
+      <h1>Hubert Kwiecień</h1>
+      <p class="pl">Buduję i utrzymuję aplikacje webowe oraz API — PHP, Symfony, Laravel i bazy danych. Blisko 3 lata doświadczenia komercyjnego, z naciskiem na jakość kodu i realne rozwiązania.</p>
+      <p class="en">I build and maintain web applications and APIs — PHP, Symfony, Laravel and databases. Nearly 3 years of commercial experience, focused on code quality and real-world solutions.</p>
+      <div class="cta">
+        <a href="#projects" class="btn btn-primary"><span class="pl">Zobacz projekty</span><span class="en">View projects</span></a>
+        <a href="https://github.com/HubertK2002" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+      </div>
+    </div>
+    <img class="photo" src="assets/img/hubert.jpg" alt="Hubert Kwiecień">
+  </div>
+</header>
+
+<!-- ===== ABOUT ===== -->
+<section class="about container" id="about">
+  <h2 class="section-title"><span class="pl">O mnie</span><span class="en">About me</span></h2>
+  <p class="pl">Programista skoncentrowany na backendzie w PHP, z blisko 3-letnim doświadczeniem komercyjnym. Lubię porządną architekturę, czysty kod i rozwiązywanie realnych problemów — od REST API i baz danych, przez integracje, po wdrożenia i konfigurację serwerów. Pracowałem z Symfony i Laravel, mam za sobą m.in. migrację aplikacji produkcyjnej, autorski system wysyłki SMS i optymalizacje wydajności. Obecnie kończę studia inżynierskie (Informatyka Stosowana, Politechnika Warszawska).</p>
+  <p class="en">Backend-focused PHP developer with nearly 3 years of commercial experience. I care about solid architecture, clean code and solving real problems — from REST APIs and databases, through integrations, to deployments and server configuration. I've worked with Symfony and Laravel, and delivered things like a production app migration, a custom SMS-sending system and performance optimizations. Currently finishing my engineering degree (Applied Computer Science, Warsaw University of Technology).</p>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="skills container" id="skills">
+  <h2 class="section-title"><span class="pl">Umiejętności</span><span class="en">Skills</span></h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3><span class="pl">PHP i backend</span><span class="en">PHP &amp; backend</span></h3>
+      <div class="tags">
+        <span class="tag">PHP</span><span class="tag">Symfony</span><span class="tag">Laravel</span>
+        <span class="tag">REST API</span><span class="tag">Doctrine</span><span class="tag">Eloquent</span>
+        <span class="tag">MVC</span><span class="tag">OOP / clean code</span><span class="tag">PHPUnit</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h3><span class="pl">Bazy danych</span><span class="en">Databases</span></h3>
+      <div class="tags">
+        <span class="tag">MySQL / MariaDB</span><span class="tag">SQL</span>
+        <span class="tag"><span class="pl">procedury składowane</span><span class="en">stored procedures</span></span>
+        <span class="tag"><span class="pl">optymalizacja zapytań</span><span class="en">query optimization</span></span>
+        <span class="tag">SQL Server</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h3><span class="pl">Frontend</span><span class="en">Frontend</span></h3>
+      <div class="tags">
+        <span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">HTML &amp; CSS</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h3><span class="pl">Narzędzia i infrastruktura</span><span class="en">Tools &amp; infrastructure</span></h3>
+      <div class="tags">
+        <span class="tag">Git</span><span class="tag">Docker</span><span class="tag">Linux</span>
+        <span class="tag">Nginx</span><span class="tag">Redis</span><span class="tag">Bash</span>
+        <span class="tag"><span class="pl">narzędzia AI</span><span class="en">AI tools</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="projects container" id="projects">
+  <h2 class="section-title"><span class="pl">Wybrane projekty</span><span class="en">Selected projects</span></h2>
+  <p class="section-sub"><span class="pl">Kliknij, aby zobaczyć kod na GitHubie lub szczegóły projektu.</span><span class="en">Click to see the code on GitHub or the project details.</span></p>
+  <div class="proj-grid">
+
+    <div class="proj">
+      <div class="thumb">Symfony + PayU</div>
+      <div class="body">
+        <h3><span class="pl">Sklep internetowy z płatnościami PayU</span><span class="en">Online store with PayU payments</span></h3>
+        <p class="desc"><span class="pl">Sklep w Symfony — katalog, koszyk, zamówienia, konta użytkowników (logowanie/rejestracja) na MariaDB oraz integracja bramki płatności online PayU.</span><span class="en">A Symfony store — catalog, cart, orders, user accounts (login/registration) on MariaDB, and an online PayU payment gateway integration.</span></p>
+        <div class="ptags"><span class="ptag">Symfony</span><span class="ptag">PHP</span><span class="ptag">MariaDB</span><span class="ptag">PayU</span></div>
+        <div class="actions">
+          <a href="projects/symfony-payu.html"><span class="pl">Szczegóły →</span><span class="en">Details →</span></a>
+          <a href="https://github.com/HubertK2002/Techniki-internetu-sklep" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="thumb">Watchroom · real-time</div>
+      <div class="body">
+        <h3><span class="pl">Wspólne oglądanie wideo</span><span class="en">Synchronized video watching</span></h3>
+        <p class="desc"><span class="pl">Aplikacja do zsynchronizowanego oglądania wideo dla wielu użytkowników — Laravel i WebSockets rozgłaszające zdarzenia odtwarzania w czasie rzeczywistym.</span><span class="en">An app for synchronized group video watching — Laravel and WebSockets broadcasting playback events in real time.</span></p>
+        <div class="ptags"><span class="ptag">Laravel</span><span class="ptag">WebSockets</span><span class="ptag">PHP</span><span class="ptag">JS</span></div>
+        <div class="actions">
+          <span class="badge-soon"><span class="pl">Strona wkrótce</span><span class="en">Page soon</span></span>
+          <a href="https://github.com/HubertK2002/Video-Party-Player" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="thumb"><span class="pl">System kolejek — REST API</span><span class="en">Queue system — REST API</span></div>
+      <div class="body">
+        <h3><span class="pl">System obsługi kolejek</span><span class="en">Queue management system</span></h3>
+        <p class="desc"><span class="pl">Repozytorium spinające REST API (CodeIgniter) i aplikację CLI jako submoduły — ze skryptem instalacyjnym w Bashu, konfiguracją Nginx pod produkcję i Redisem.</span><span class="en">An umbrella repo combining a REST API (CodeIgniter) and a CLI app as submodules — with a Bash installer, production Nginx configuration and Redis.</span></p>
+        <div class="ptags"><span class="ptag">PHP</span><span class="ptag">REST API</span><span class="ptag">Nginx</span><span class="ptag">Redis</span><span class="ptag">Bash</span></div>
+        <div class="actions">
+          <span class="badge-soon"><span class="pl">Strona wkrótce</span><span class="en">Page soon</span></span>
+          <a href="https://github.com/HubertK2002/Api-system-w-kolejek-g-rskich" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="thumb">Symfony · Auth</div>
+      <div class="body">
+        <h3><span class="pl">Logowanie i rejestracja w Symfony</span><span class="en">Login &amp; registration in Symfony</span></h3>
+        <p class="desc"><span class="pl">Moduł uwierzytelniania w Symfony — logowanie i rejestracja z wykorzystaniem encji, enumów oraz formularzy z walidacją i widokiem danych użytkownika.</span><span class="en">A Symfony authentication module — login and registration using entities, enums and validated forms with a user-data view.</span></p>
+        <div class="ptags"><span class="ptag">Symfony</span><span class="ptag">PHP</span><span class="ptag">Doctrine</span></div>
+        <div class="actions">
+          <span class="badge-soon"><span class="pl">Strona wkrótce</span><span class="en">Page soon</span></span>
+          <a href="https://github.com/HubertK2002/Techniki-internetu-Projekt-Logowanie-Symfony" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="thumb">ORBI · C++ / React</div>
+      <div class="body">
+        <h3><span class="pl">ORBI — aplikacja do nauki matematyki</span><span class="en">ORBI — a math-learning app</span></h3>
+        <p class="desc"><span class="pl">Silnik matematyczny i generator zadań w C++ oraz interfejs w React. Projekt rozwijany zespołowo — prowadzenie merytorycznych code review i dbałość o jakość kodu.</span><span class="en">A math engine and exercise generator in C++ with a React interface. Developed as a team — conducting technical code reviews and caring about code quality.</span></p>
+        <div class="ptags"><span class="ptag">C++</span><span class="ptag">React</span><span class="ptag"><span class="pl">praca zespołowa</span><span class="en">teamwork</span></span><span class="ptag">code review</span></div>
+        <div class="actions">
+          <span class="badge-soon"><span class="pl">Strona wkrótce</span><span class="en">Page soon</span></span>
+          <a href="https://github.com/HubertK2002" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section class="experience container" id="experience">
+  <h2 class="section-title"><span class="pl">Doświadczenie</span><span class="en">Experience</span></h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="when">2022 – 2025</div>
+      <h3>Software Developer · <span class="org">Atinea sp. z o.o.</span></h3>
+      <p class="pl">Rozwój i utrzymanie aplikacji produkcyjnych dla klientów biznesowych: backend w PHP i bazy MySQL/MariaDB, REST API, migracja aplikacji Delphi→C#, autorski system wysyłki SMS, optymalizacja wydajności i automatyzacja wdrożeń (Bash).</p>
+      <p class="en">Development and maintenance of production apps for business clients: PHP backend and MySQL/MariaDB databases, REST APIs, a Delphi→C# app migration, a custom SMS-sending system, performance optimization and deployment automation (Bash).</p>
+    </div>
+    <div class="tl-item">
+      <div class="when">2025 – 2026</div>
+      <h3><span class="pl">Trener IT</span><span class="en">IT Trainer</span> · <span class="org">Instytut Równość i Dostępność</span></h3>
+      <p class="pl">Szkolenia z cyberbezpieczeństwa i kompetencji cyfrowych — tłumaczenie zagadnień technicznych osobom nietechnicznym, dzielenie się wiedzą i dobrymi praktykami.</p>
+      <p class="en">Training in cybersecurity and digital skills — explaining technical topics to non-technical audiences, sharing knowledge and good practices.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="container" id="contact">
+  <div class="contact">
+    <h2><span class="pl">Kontakt</span><span class="en">Get in touch</span></h2>
+    <p class="pl">Otwarty na oferty backend / PHP. Napisz albo zajrzyj na GitHub.</p>
+    <p class="en">Open to backend / PHP roles. Reach out or check my GitHub.</p>
+    <div class="links">
+      <a href="mailto:hubistef16@wp.pl" class="btn btn-primary">hubistef16@wp.pl</a>
+      <a href="https://github.com/HubertK2002" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Hubert Kwiecień · <span class="pl">Zbudowane jako statyczna strona</span><span class="en">Built as a static site</span></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
