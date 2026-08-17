@@ -14,3 +14,6 @@ desktop.ini
 # Zależności (gdyby doszły)
 node_modules/
 vendor/
+
+# Lokalna konfiguracja z sekretem (hash hasła)
+lib/config.php

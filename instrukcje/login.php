@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../lib/auth.php';
+require_once __DIR__ . '/../lib/auth.php';
 
 if (kb_is_logged_in()) { header('Location: edytor.php'); exit; }
 

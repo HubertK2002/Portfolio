@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../lib/kb.php';
+require_once __DIR__ . '/../lib/kb.php';
 
 $SECTION_ROOT = realpath(CONTENT_ROOT . '/artykuly');
 
