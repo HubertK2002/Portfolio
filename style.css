@@ -302,3 +302,6 @@ footer{text-align:center; color:var(--muted); font-size:13px; padding:30px 0 40p
 /* live demo link na kartach projektów */
 .proj .actions a.live{color:var(--ind); font-weight:800}
 .proj .actions a.live:hover{color:var(--ind-d)}
+
+/* podpis pod nagłówkiem karty umiejętności (kalibracja) */
+.skill-note{margin:-4px 0 12px; font-size:12px; color:var(--muted); font-style:italic}
