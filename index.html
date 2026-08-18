@@ -82,6 +82,7 @@
       <div class="tags">
         <span class="tag">Laravel</span><span class="tag">Eloquent</span><span class="tag">JavaScript / TypeScript</span>
         <span class="tag">React</span><span class="tag">HTML &amp; CSS</span><span class="tag">Python</span><span class="tag">Java</span>
+        <span class="tag">GraphQL</span><span class="tag">PostgreSQL</span>
         <span class="tag">Redis</span><span class="tag">Docker</span><span class="tag">WebAssembly</span>
         <span class="tag">OpenGL / SDL</span><span class="tag">PHPUnit</span><span class="tag">SQL Server</span>
       </div>
@@ -94,6 +95,32 @@
   <h2 class="section-title"><span class="pl">Wybrane projekty</span><span class="en">Selected projects</span></h2>
   <p class="section-sub"><span class="pl">Kliknij, aby uruchomić demo na żywo, zobaczyć kod na GitHubie lub szczegóły projektu.</span><span class="en">Click to run a live demo, see the code on GitHub or the project details.</span></p>
   <div class="proj-grid">
+
+    <div class="proj">
+      <div class="thumb">HK Mail API · Laravel</div>
+      <div class="body">
+        <h3><span class="pl">HK Mail — API poczty</span><span class="en">HK Mail — mail API</span></h3>
+        <p class="desc"><span class="pl">Backend systemu pocztowego w Laravel (PHP 8.3, PostgreSQL): odbieranie i wysyłka maili przez Resend (webhooki), <b>API GraphQL</b> (Lighthouse), kolejkowe workery do pobierania treści i załączników oraz harmonogram czyszczący wygasłe konta demo. API nie udostępnia danych publicznie — w działaniu można je zobaczyć przez klienta HK Mail.</span><span class="en">The backend of a mail system in Laravel (PHP 8.3, PostgreSQL): receiving and sending mail through Resend (webhooks), a <b>GraphQL API</b> (Lighthouse), queue workers fetching message bodies and attachments, and a scheduler cleaning up expired demo accounts. The API exposes no public data — you can see it in action through the HK Mail client.</span></p>
+        <div class="ptags"><span class="ptag">Laravel</span><span class="ptag">PHP 8.3</span><span class="ptag">GraphQL</span><span class="ptag">PostgreSQL</span><span class="ptag"><span class="pl">kolejki</span><span class="en">queues</span></span></div>
+        <div class="actions">
+          <a href="projects/hk-mail-api.html"><span class="pl">Szczegóły →</span><span class="en">Details →</span></a>
+          <a href="https://github.com/HubertK2002/MailApi" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="thumb">HK Mail · React + GraphQL</div>
+      <div class="body">
+        <h3><span class="pl">HK Mail — klient poczty</span><span class="en">HK Mail — webmail client</span></h3>
+        <p class="desc"><span class="pl">Webowy klient poczty w React i TypeScript (Vite, urql) komunikujący się z API przez GraphQL — interfejs dostosowuje się do typu konta (administrator lub konto demo). Wdrożony jako statyczna aplikacja na Nginx.</span><span class="en">A webmail client in React and TypeScript (Vite, urql) talking to the API over GraphQL — the interface adapts to the account type (admin or demo account). Deployed as a static app on Nginx.</span></p>
+        <div class="ptags"><span class="ptag">React</span><span class="ptag">TypeScript</span><span class="ptag">GraphQL</span><span class="ptag">Vite</span><span class="ptag">Nginx</span></div>
+        <div class="actions">
+          <a class="live" href="https://poczta.hkwiecien.pl/" target="_blank" rel="noopener">▶ <span class="pl">Zobacz na żywo</span><span class="en">Live demo</span></a>
+          <a href="https://github.com/HubertK2002/MailClient" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
 
     <div class="proj">
       <div class="thumb">Symfony + PayU</div>
@@ -130,19 +157,6 @@
         <div class="actions">
           <span class="badge-soon"><span class="pl">Strona wkrótce</span><span class="en">Page soon</span></span>
           <a href="https://github.com/HubertK2002/Api-system-w-kolejek-g-rskich" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj">
-      <div class="thumb">Symfony · Auth</div>
-      <div class="body">
-        <h3><span class="pl">Logowanie i rejestracja w Symfony</span><span class="en">Login &amp; registration in Symfony</span></h3>
-        <p class="desc"><span class="pl">Moduł uwierzytelniania w Symfony — logowanie i rejestracja z wykorzystaniem encji, enumów oraz formularzy z walidacją i widokiem danych użytkownika.</span><span class="en">A Symfony authentication module — login and registration using entities, enums and validated forms with a user-data view.</span></p>
-        <div class="ptags"><span class="ptag">Symfony</span><span class="ptag">PHP</span><span class="ptag">Doctrine</span></div>
-        <div class="actions">
-          <span class="badge-soon"><span class="pl">Strona wkrótce</span><span class="en">Page soon</span></span>
-          <a href="https://github.com/HubertK2002/Techniki-internetu-Projekt-Logowanie-Symfony" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </div>

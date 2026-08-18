@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl" data-lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HK Mail API — Hubert Kwiecień</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="inner">
+    <a href="../index.html" class="brand">Hubert<span>.</span>Kwiecień</a>
+    <div class="links">
+      <a href="../index.html#projects"><span class="pl">← Projekty</span><span class="en">← Projects</span></a>
+      <button class="btn-lang">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="detail-hero">
+  <div class="container">
+    <a href="../index.html#projects" class="back"><span class="pl">← Wróć do portfolio</span><span class="en">← Back to portfolio</span></a>
+    <h1><span class="pl">HK Mail — API poczty</span><span class="en">HK Mail — mail API</span></h1>
+    <div class="ptags"><span class="ptag">Laravel</span><span class="ptag">PHP 8.3</span><span class="ptag">GraphQL</span><span class="ptag">Lighthouse</span><span class="ptag">PostgreSQL</span><span class="ptag">Resend</span></div>
+    <a href="https://github.com/HubertK2002/MailApi" target="_blank" rel="noopener" class="btn btn-primary">GitHub →</a>
+  </div>
+</header>
+
+<main class="detail container">
+  <h2><span class="pl">O projekcie</span><span class="en">Overview</span></h2>
+  <p class="pl">Backend systemu pocztowego HK Mail — odpowiada za odbieranie i wysyłanie wiadomości, przechowywanie ich w bazie oraz udostępnianie danych klientowi przez API GraphQL. Obsługuje dwa rodzaje kont: administratora ze skrzynkami we własnej domenie oraz tymczasowe konta demo, tworzone na token i odizolowane od pozostałych danych.</p>
+  <p class="en">The backend of the HK Mail system — it receives and sends messages, stores them in the database and exposes data to the client through a GraphQL API. It supports two kinds of accounts: an administrator with mailboxes on a private domain, and temporary demo accounts that are token-provisioned and isolated from other data.</p>
+
+  <div class="note-box">
+    <p class="pl"><b>Dlaczego nie ma linku „na żywo"?</b> To czyste API — nie udostępnia żadnych danych publicznie i wymaga uwierzytelnienia. Działanie backendu najlepiej zobaczyć przez <a href="https://poczta.hkwiecien.pl/" target="_blank" rel="noopener">klienta HK Mail</a>, który korzysta z tego API.</p>
+    <p class="en"><b>Why is there no “live” link?</b> This is a pure API — it exposes no public data and requires authentication. The easiest way to see the backend in action is through the <a href="https://poczta.hkwiecien.pl/" target="_blank" rel="noopener">HK Mail client</a>, which consumes this API.</p>
+  </div>
+
+  <h2><span class="pl">Co zbudowałem</span><span class="en">What I built</span></h2>
+  <ul>
+    <li class="pl"><b>API GraphQL</b> (Lighthouse) — schemat, zapytania i mutacje obsługujące skrzynki, wiadomości i kontakty klienta.</li>
+    <li class="en"><b>GraphQL API</b> (Lighthouse) — schema, queries and mutations serving the client's mailboxes, messages and contacts.</li>
+    <li class="pl"><b>Integracja z Resend</b> — wysyłka wiadomości oraz odbiór poczty przychodzącej przez webhooki.</li>
+    <li class="en"><b>Resend integration</b> — sending messages and receiving inbound mail through webhooks.</li>
+    <li class="pl"><b>Przetwarzanie w tle</b> — kolejkowe workery (kolejka w bazie danych) pobierające treść wiadomości i załączniki, dzięki czemu żądania nie blokują użytkownika.</li>
+    <li class="en"><b>Background processing</b> — queue workers (database-backed queue) fetching message bodies and attachments, so requests never block the user.</li>
+    <li class="pl"><b>Konta demo</b> — tworzone na token, odseparowane od danych administratora, z harmonogramem (scheduler) automatycznie usuwającym wygasłe konta.</li>
+    <li class="en"><b>Demo accounts</b> — token-provisioned, isolated from admin data, with a scheduler automatically removing expired accounts.</li>
+    <li class="pl"><b>Uwierzytelnianie i role</b> — rozdzielenie uprawnień administratora i kont demo oraz konfiguracja CORS pod osobno hostowany frontend.</li>
+    <li class="en"><b>Authentication and roles</b> — separating administrator and demo permissions, plus CORS configuration for the separately hosted frontend.</li>
+  </ul>
+
+  <h2><span class="pl">Stack technologiczny</span><span class="en">Tech stack</span></h2>
+  <p class="pl"><b>Backend:</b> PHP 8.3, Laravel &nbsp;·&nbsp; <b>API:</b> GraphQL (Lighthouse) &nbsp;·&nbsp; <b>Baza:</b> PostgreSQL &nbsp;·&nbsp; <b>Poczta:</b> Resend (SMTP + webhooki) &nbsp;·&nbsp; <b>Asynchroniczność:</b> kolejki i scheduler Laravela &nbsp;·&nbsp; <b>Wdrożenie:</b> Linux, Nginx.</p>
+  <p class="en"><b>Backend:</b> PHP 8.3, Laravel &nbsp;·&nbsp; <b>API:</b> GraphQL (Lighthouse) &nbsp;·&nbsp; <b>Database:</b> PostgreSQL &nbsp;·&nbsp; <b>Mail:</b> Resend (SMTP + webhooks) &nbsp;·&nbsp; <b>Async:</b> Laravel queues and scheduler &nbsp;·&nbsp; <b>Deployment:</b> Linux, Nginx.</p>
+
+  <h2><span class="pl">API w działaniu</span><span class="en">The API in action</span></h2>
+  <p class="pl">Poniższe zrzuty pochodzą z klienta HK Mail — pokazują dane serwowane przez to API: pocztę odebraną przez webhooki, podział na skrzynki oraz obsługę załączników i treści HTML.</p>
+  <p class="en">The screenshots below come from the HK Mail client — they show the data served by this API: mail received through webhooks, the split into mailboxes, and handling of attachments and HTML content.</p>
+
+  <figure class="shot-fig">
+    <img class="shot" src="../assets/img/hkmail-1-wszystkie.png" alt="HK Mail — widok wszystkich wiadomości">
+    <figcaption><span class="pl">Skrzynka zbiorcza — wiadomości odebrane przez webhooki Resend i zapisane w bazie, wraz z oznaczeniem załączników.</span><span class="en">Combined inbox — messages received through Resend webhooks and stored in the database, with attachment indicators.</span></figcaption>
+  </figure>
+
+  <figure class="shot-fig">
+    <img class="shot" src="../assets/img/hkmail-2-admin.png" alt="HK Mail — skrzynka admin@">
+    <figcaption><span class="pl">Osobne skrzynki dla adresów we własnej domenie (<code>admin@</code>) — API rozdziela pocztę przychodzącą na właściwe konta.</span><span class="en">Separate mailboxes for addresses on a private domain (<code>admin@</code>) — the API routes inbound mail to the right accounts.</span></figcaption>
+  </figure>
+
+  <figure class="shot-fig">
+    <img class="shot" src="../assets/img/hkmail-3-kontakt.png" alt="HK Mail — skrzynka kontakt@">
+    <figcaption><span class="pl">Skrzynka <code>kontakt@</code> z podglądem wiadomości — treść pobierana asynchronicznie przez workera kolejki.</span><span class="en">The <code>kontakt@</code> mailbox with a message preview — the body is fetched asynchronously by a queue worker.</span></figcaption>
+  </figure>
+
+  <figure class="shot-fig">
+    <img class="shot" src="../assets/img/hkmail-4-zalacznik.png" alt="HK Mail — wiadomość HTML z załącznikiem">
+    <figcaption><span class="pl">Wiadomość z załącznikiem i treścią HTML (listy, formatowanie, obraz) — załączniki są pobierane i zapisywane w tle.</span><span class="en">A message with an attachment and HTML content (lists, formatting, an image) — attachments are fetched and stored in the background.</span></figcaption>
+  </figure>
+
+  <h2><span class="pl">Czego się nauczyłem</span><span class="en">What I learned</span></h2>
+  <p class="pl">Projektowanie API schema-first w GraphQL zamiast REST, obsługa poczty przychodzącej przez webhooki zewnętrznego dostawcy oraz przenoszenie wolnych operacji (pobieranie treści i załączników) do kolejek. Sporo dało też odseparowanie kont demo od danych administratora — czyli projektowanie pod izolację danych i automatyczne wygasanie.</p>
+  <p class="en">Designing a schema-first GraphQL API instead of REST, handling inbound mail through a third-party provider's webhooks, and moving slow operations (fetching bodies and attachments) into queues. Isolating demo accounts from admin data was equally instructive — designing for data isolation and automatic expiry.</p>
+
+  <p style="margin:36px 0 10px"><a href="../index.html#projects"><span class="pl">← Wróć do wszystkich projektów</span><span class="en">← Back to all projects</span></a></p>
+</main>
+
+<footer>
+  <div class="container">© 2026 Hubert Kwiecień</div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

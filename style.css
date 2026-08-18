@@ -305,3 +305,13 @@ footer{text-align:center; color:var(--muted); font-size:13px; padding:30px 0 40p
 
 /* podpis pod nagłówkiem karty umiejętności (kalibracja) */
 .skill-note{margin:-4px 0 12px; font-size:12px; color:var(--muted); font-style:italic}
+
+/* wyróżniona notka na stronie projektu */
+.note-box{background:#f6f7fe; border:1px solid var(--card-bd); border-left:4px solid var(--ind); border-radius:10px; padding:14px 18px; margin:18px 0}
+.note-box p{margin:0; font-size:15px; color:var(--ink-soft)}
+
+/* galeria zrzutów na stronie projektu */
+.shot-fig{margin:22px 0 26px}
+.shot-fig .shot{width:100%; height:auto; border:1px solid var(--card-bd); border-radius:12px; box-shadow:var(--shadow); background:#171a2e}
+.shot-fig figcaption{margin-top:8px; font-size:13.5px; color:var(--muted); line-height:1.5}
+.shot-fig figcaption code{background:#eef0f5; color:#b4227a; padding:1px 5px; border-radius:4px; font-size:12.5px}
