@@ -54,7 +54,7 @@ $heading = $editId ? 'Edytuj instrukcję' : 'Nowa instrukcja';
   </div>
   <button type="submit" class="btn btn-primary"><?= $editId ? 'Zapisz zmiany' : 'Utwórz' ?></button>
 </form>
-<p class="ed-hint">Wskazówka: węzeł bez treści działa jak czysta kategoria; węzeł z treścią to instrukcja. Kategoria z treścią = kategoria z opisem.</p>
+<p class="ed-hint">Wskazówka: węzeł bez treści działa jak czysta kategoria; węzeł z treścią to instrukcja. Kategoria z treścią = kategoria z opisem. W polu treści <b>Tab</b> wstawia tabulację, <b>Shift+Tab</b> ją usuwa (Esc, potem Tab — wyjście z pola).</p>
 
 <div class="ed-panes">
   <div class="ed-editor">
@@ -76,6 +76,49 @@ fileIn.addEventListener('input', () => fileTouched = true);
 function slug(s){const m={'ą':'a','ć':'c','ę':'e','ł':'l','ń':'n','ó':'o','ś':'s','ż':'z','ź':'z'};
   return s.toLowerCase().replace(/[ąćęłńóśżź]/g,c=>m[c]).replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
 title.addEventListener('input', () => { if(!fileTouched) fileIn.value = slug(title.value); });
+// ——— Tab w polu Markdown: wcięcie zamiast przeskoku do następnego pola ———
+let tabEscaped = false;   // Esc → następny Tab znów wychodzi z pola (dostępność)
+
+function insertText(text){
+  // execCommand zachowuje historię cofania (Ctrl+Z) i sam odpala zdarzenie input
+  if (!document.execCommand || !document.execCommand('insertText', false, text)) {
+    const s = content.selectionStart, e = content.selectionEnd, v = content.value;
+    content.value = v.slice(0, s) + text + v.slice(e);
+    content.selectionStart = content.selectionEnd = s + text.length;
+    content.dispatchEvent(new Event('input', {bubbles:true}));
+  }
+}
+
+content.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { tabEscaped = true; return; }
+  if (e.key !== 'Tab' || e.ctrlKey || e.altKey || e.metaKey) return;
+  if (tabEscaped) { tabEscaped = false; return; }   // pozwól wyjść z pola
+  e.preventDefault();
+
+  const start = content.selectionStart, end = content.selectionEnd, val = content.value;
+  const multiline = val.slice(start, end).includes('\n');
+
+  if (!multiline && !e.shiftKey) {          // zwykły Tab → wstaw tabulację
+    insertText('\t');
+    return;
+  }
+
+  // wcięcie / usunięcie wcięcia całych linii
+  const lineStart = val.lastIndexOf('\n', start - 1) + 1;
+  let lineEnd = val.indexOf('\n', end);
+  if (lineEnd === -1) lineEnd = val.length;
+
+  const lines = val.slice(lineStart, lineEnd).split('\n');
+  const out = e.shiftKey
+    ? lines.map(l => l.replace(/^(\t| {1,4})/, ''))
+    : lines.map(l => '\t' + l);
+  const block = out.join('\n');
+
+  content.setSelectionRange(lineStart, lineEnd);
+  insertText(block);
+  content.setSelectionRange(lineStart, lineStart + block.length);
+});
+
 let t=null;
 function render(){
   const body = content.value;
