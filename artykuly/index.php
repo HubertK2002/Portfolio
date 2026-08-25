@@ -80,6 +80,6 @@ if ($docPath) $pageTitle = kb_title_from_file($docPath) . ' — Artykuły';
   <?php endif; ?>
 </div>
 
-<script src="../script.js"></script>
+<script src="../script.js?v=<?= @filemtime(__DIR__ . '/../script.js') ?>"></script>
 </body>
 </html>
